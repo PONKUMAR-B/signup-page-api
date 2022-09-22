@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.signup-form{
+  background: linear-gradient(to right, #dcdcee, #b8d8d8c0);
+  width: 100%;
   min-height: 100vh;
+}
+
+h2{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-control{
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  font-family: 'Manrope';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form{
+  background-color: #8bb0cc;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.form .form-label{
+  color: #39393a;
+  font-size: 14px;
+}
+
+.form .form-input{
+  width: 100%;
+  padding: 10px 10px;
+  margin: 5px 0px;
+  border-style: none;
+  border-radius: 5px;
+}
+
+
+.form .submit{
+  width: 100%;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 13px;
+}
+.form .submit:hover{
+  color: #000000;
+  background-color: #51689b;
+}
+
+
+.signin{
+  margin-left: 50px;
+  color: #832618;
+}
+
+.signin:hover{
+  color: #4d5f6b;
+}
+
+
+.search-control{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.search-control .search,.button{
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.search-control .button{
+  color: #ffff;
+  background-color: #51689b;
+}
+
+/*style for table*/
+
+.table{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.table .tablebody{
+  margin-bottom: 20px;
+}
+
+.table .tablebody .tabledata,button{
+  padding: 10px;
+  background-color: #b5d1e7;
+  border: none;
+}
+
+.button2{
+  padding: 15px 10px;
+  background-color: #ff3737;
+  color: #ffffff;
+}
+.button1{
+  padding: 15px 10px;
+  background-color: #00a323;
+  color: #ffffff;
 }

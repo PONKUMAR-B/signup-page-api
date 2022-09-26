@@ -13,7 +13,7 @@
 h2{
   display: flex;
   justify-content: center;
-  padding: 15px 0px;
+  padding: 30px 0px 10px 0px;
 }
 
 .form-control{
@@ -98,10 +98,14 @@ h2{
   display: flex;
   justify-content: center;
   margin: 30px;
+  
 }
 
 .table .tablebody{
   margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 2px solid #96a9d3;
+  border-radius: 5px;
 }
 
 .table .tablebody .tabledata,button{
@@ -119,4 +123,21 @@ h2{
   padding: 15px 10px;
   background-color: #00a323;
   color: #ffffff;
+}
+
+.logout{
+  float: right;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0px 80px 20px 0px;
+}
+
+
+.form .data1{
+  width: 40%;
+  margin-right: 5px;
+}
+.form .data2{
+  width: 40%;
+  margin-left: 30px;
 }

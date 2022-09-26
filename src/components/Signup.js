@@ -1,8 +1,9 @@
-import React,{ useState} from "react";
+import React,{ useState,useEffect} from "react";
 import axios from 'axios';
 import  { useNavigate } from 'react-router-dom';
 
- function Signup (){
+
+function Signup (){
         let navigate = useNavigate();
         const [values, setValues] = useState(
             {
@@ -19,12 +20,11 @@ import  { useNavigate } from 'react-router-dom';
         const handleChange = (event) =>{
             setValues({...values,[event.target.name]: event.target.value});
         };
-        
+
         const handleSubmit=(e)=>{
             e.preventDefault();
             console.log(values);
-            navigate("/");
-            setValues("");
+           
 
             const Name=document.getElementById('username').value;
             const Fname=document.getElementById('fname').value;
@@ -46,7 +46,7 @@ import  { useNavigate } from 'react-router-dom';
                 }
             }  
 
-            axios.post( 'http://localhost:3003/users',{...values,[e.target.name]:e.target.value},{
+            axios.post( 'https://633163943ea4956cfb5c778a.mockapi.io/signin/',{...values,[e.target.name]:e.target.value},{
                 
                     headers:{
                     'Content-Type' : 'application/json',
@@ -54,11 +54,9 @@ import  { useNavigate } from 'react-router-dom';
                     }
             })
             .then(function(response){
-                localStorage.setItem({
-                    "username": response.data.username
-                });
-                localStorage.getItem("username")
-            
+                setValues(response.data);
+                localStorage.removeItem('Records');
+                navigate("/");
             })
             .catch(function(error){
                 console.log(error);
@@ -66,6 +64,9 @@ import  { useNavigate } from 'react-router-dom';
 
         }    
        
+        useEffect(() => {
+            localStorage.setItem('Records', JSON.stringify(values));
+        }, [values]);
 
         const Signin = (e) =>{
             e.preventDefault();
@@ -82,7 +83,7 @@ import  { useNavigate } from 'react-router-dom';
                             <label className="form-label">First Name</label><br/>
                             <input type="text" className="form-input" id="fname" placeholder="Enter your firstname" required name="fname" value = { values.fname } onChange={handleChange}></input>
                             <label className="form-label">Last Name</label><br/>
-                            <input type="text" className="form-input" id="lname" placeholder="Enter your lastname" required name="lname" value = { values.lname } onChange={handleChange}></input><br/>
+                            <input type="text" className="form-input" id="lname" placeholder="Enter your lastname" name="lname" value = { values.lname } onChange={handleChange}></input><br/>
                             <label className="form-label">Email Id</label><br/>
                             <input type="email" className="form-input" id="email" placeholder="Enter your mail id" required name="email" value = { values.email } onChange={handleChange}></input><br/>
                             <label className="form-label">Password</label><br/>
